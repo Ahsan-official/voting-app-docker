@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Voting App</h1>
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+        <div class="buttons">
+            <a href="/vote/A" class="vote-btn">Vote A</a>
+            <a href="/vote/B" class="vote-btn">Vote B</a>
+        </div>
+        <div class="results">
+            <p>Votes:</p>
+            <p>A: {{ votes['A'] }}</p>
+            <p>B: {{ votes['B'] }}</p>
+        </div>
+    </div>
+</body>
+</html>
